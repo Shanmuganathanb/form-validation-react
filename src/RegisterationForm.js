@@ -39,8 +39,7 @@ function RegistrationForm() {
             errors.name = "";
         }
 
-        const emailCond = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-        
+        const emailCond = new RegExp('[a-z0-9]+@[a-z]+\.[a-z]{2,3}');
         if (!inputValues.email) {
             errors.email = "Email is required";
         } else if (!inputValues.email.match(emailCond)) {
